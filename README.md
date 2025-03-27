@@ -12,4 +12,4 @@ Mobile application for real-time certificate verification.
 AI-powered analytics for tracking verification trends and detecting fraud patterns.
 
 APIs for integration with LMS (Learning Management Systems) and HR software.
-5.⁠ ⁠Contract Details:0x1f87a6b87ae20063930dac253bf3e5ce90b2e1ac4da0c85f2d89d9637139cce5
+5.⁠ ⁠Contract Details:"0x1f87a6b87ae20063930dac253bf3e5ce90b2e1ac4da0c85f2d89d9637139cce5"
