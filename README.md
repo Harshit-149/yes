@@ -24,5 +24,8 @@ To create a transparent, immutable, and universally accessible platform for cert
 ---
 
 5. Contract Details:  
-Smart Contract Address:"0x1234567890abcdef1234567890abcdef12345678"  
+Smart Contract Address:"0x1234567890abcdef1234567890abcdef12345678"
+
+  ![image](https://github.com/user-attachments/assets/c3ba3779-7792-4aac-8613-13689f6c0cee)
+
 
