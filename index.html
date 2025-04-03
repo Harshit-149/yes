@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CertVerify - Blockchain Certificate Verification</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>📜 CertVerify</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">🏠 Home</a>
+                <a href="#issue">📝 Issue</a>
+                <a href="#verify">🔍 Verify</a>
+                <a href="#about">ℹ️ About</a>
+                <button id="connectWallet" class="btn-primary">🔗 Connect Wallet</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="container">
+            <div class="hero">
+                <h1>The Future of<br>Certificate Verification</h1>
+                <p>Experience the most secure and transparent way to issue and verify digital certificates using blockchain technology.</p>
+                <div class="cta-buttons">
+                    <a href="#issue" class="btn-primary">📝 Start Issuing</a>
+                    <a href="#verify" class="btn-primary">🔍 Verify Certificate</a>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>📝 Issue Certificates</h3>
+                    <p>Create and issue tamper-proof digital certificates with unique identifiers on the blockchain.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>🔒 Secure Storage</h3>
+                    <p>All certificates are securely stored on the blockchain, ensuring permanent and immutable records.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>✅ Instant Verification</h3>
+                    <p>Verify the authenticity of any certificate in seconds with complete confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Issue Certificate Section -->
+    <section id="issue" class="section">
+        <div class="container">
+            <h2>Issue Certificate</h2>
+            <div class="form-container">
+                <div id="walletAlert" class="alert warning">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Please connect your wallet to continue
+                </div>
+                <form id="issueForm">
+                    <div class="form-group">
+                        <label for="recipientAddress">Recipient Address</label>
+                        <input type="text" id="recipientAddress" required placeholder="Enter recipient's wallet address">
+                    </div>
+                    <div class="form-group">
+                        <label for="certificateId">Certificate ID</label>
+                        <input type="text" id="certificateId" required placeholder="Enter unique certificate ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="validityPeriod">Validity Period (days)</label>
+                        <input type="number" id="validityPeriod" required placeholder="Enter validity period in days">
+                    </div>
+                    <button type="submit" class="btn-primary" disabled>Issue Certificate</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verify Certificate Section -->
+    <section id="verify" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔍 Verify Certificate</h2>
+                <p>Ensure the authenticity of your certificates using our secure blockchain verification system. Our platform provides instant verification of certificates issued on the Aptos blockchain.</p>
+            </div>
+
+            <div class="verification-steps">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>🔗 Connect Wallet</h3>
+                    <p>Connect your Petra wallet to access the verification system and ensure secure authentication.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>📝 Enter Certificate Address</h3>
+                    <p>Input the unique certificate address provided with your certificate for verification.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>✅ Instant Verification</h3>
+                    <p>Get immediate confirmation of the certificate's authenticity and validity status.</p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <div id="verifyWalletAlert" class="alert warning">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Please connect your wallet to continue
+                </div>
+                <form id="verifyForm">
+                    <div class="form-group">
+                        <label for="verifyAddress">📝 Certificate Address</label>
+                        <input type="text" id="verifyAddress" required placeholder="Enter the certificate address (e.g., 0x1234...)">
+                    </div>
+                    <button type="submit" class="verify-btn" disabled>
+                        <i class="fas fa-check-circle"></i>
+                        Verify Certificate
+                    </button>
+                </form>
+                <div id="verificationResult" class="verification-result hidden">
+                    <div class="result-icon">
+                        <i class="fas"></i>
+                    </div>
+                    <h3 class="result-title"></h3>
+                    <p class="result-message"></p>
+                </div>
+            </div>
+            
+            <!-- Certificate History -->
+            <div id="certificateHistory" class="certificate-history">
+                <h3>📋 Verification History</h3>
+                <!-- History items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>ℹ️ About</h2>
+            <div class="about-content">
+                <div class="mission">
+                    <h3>Our Vision</h3>
+                    <p>We're revolutionizing certificate verification through blockchain technology, creating a future where credentials are instantly verifiable, completely secure, and globally accessible.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>🔒 Blockchain Security</h4>
+                        <p>Leveraging blockchain technology for immutable and transparent certificate verification</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bolt"></i>
+                        <h4>⚡ Instant Verification</h4>
+                        <p>Verify certificates in seconds from anywhere in the world</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i>
+                        <h4>🔐 Tamper-Proof</h4>
+                        <p>Once issued, certificates cannot be modified or falsified</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-globe"></i>
+                        <h4>🌍 Global Access</h4>
+                        <p>Access and verify certificates from anywhere, anytime</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@aptos-labs/aptos-wallet-adapter@1.0.0/dist/index.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
