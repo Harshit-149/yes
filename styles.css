@@ -765,4 +765,171 @@ section h2 {
 
 .verify-btn i {
     font-size: 1.3rem;
+}
+
+/* Add styles for the download button */
+.download-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+}
+
+.download-btn i {
+    font-size: 14px;
+}
+
+/* Add styles for the download button in verification result */
+.verification-result .download-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 15px;
+    background-color: #2ecc71;
+}
+
+.verification-result .download-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Add styles for the download button in certificate history */
+.history-item .download-btn {
+    margin-top: 8px;
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+/* Add styles for the verification result */
+.verification-result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.verification-result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.verification-result.success {
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+}
+
+.verification-result.error {
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+}
+
+.verification-result .result-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.verification-result.success .result-icon {
+    color: #2ecc71;
+}
+
+.verification-result.error .result-icon {
+    color: #e74c3c;
+}
+
+.verification-result .result-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.verification-result .result-message {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* Add styles for the certificate history */
+.certificate-history {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.certificate-history h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+.certificate-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.certificate-history .history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.certificate-history .history-item:hover {
+    transform: translateY(-2px);
+}
+
+.certificate-history .history-content {
+    flex: 1;
+}
+
+.certificate-history .history-content h4 {
+    margin: 0 0 5px 0;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.certificate-history .history-content p {
+    margin: 5px 0;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.certificate-history .history-status {
+    font-size: 24px;
+    margin-left: 15px;
+}
+
+.certificate-history .history-status.valid {
+    color: #2ecc71;
+}
+
+.certificate-history .history-status.invalid {
+    color: #e74c3c;
+}
+
+.certificate-history .no-history {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 20px;
 } 
